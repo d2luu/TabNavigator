@@ -7,15 +7,16 @@ import {
 
 import {Icon} from 'react-native-elements';
 
-import HomeComponent from './components/HomeComponent';
-import DetailComponent from './components/DetailComponent';
-import SettingComponent from './components/SettingComponent';
-import InfoComponent from './components/InfoComponent';
-import MapComponent from './components/MapComponent';
+import HomeTabNavigation from './HomeTabNavigation';
+import HomeComponent from '../HomeComponent';
+import DetailComponent from '../DetailComponent';
+import SettingComponent from '../SettingComponent';
+import InfoComponent from '../InfoComponent';
+import MapComponent from '../MapComponent';
 
 export const BottomBar = createBottomTabNavigator({
   Home: {
-    screen: HomeComponent,
+    screen: HomeTabNavigation,
     navigationOptions: {
       tabBarLabel: 'HOME',
       tabBarIcon: ({tintColor}) => <Icon name='home' size={30}
@@ -56,7 +57,7 @@ export const BottomBar = createBottomTabNavigator({
   },
 });
 
-export const SideMenu = createDrawerNavigator(
+export const Route = createDrawerNavigator(
   {
     Tabbar: {
       screen: BottomBar,
